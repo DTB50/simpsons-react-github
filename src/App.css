@@ -1,33 +1,57 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 650px;
+  height: 100vh;
+  padding-left: 10px;
+  margin: 50px auto;
+  background-color: #f7d322;
+  border-radius: 10px;
+  box-shadow: none;
+  font-family: 'Gochi Hand', cursive;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 800px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .App {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      padding-left: 10px;
+      margin: none;
+      background-color: #f7d322;
+      border-radius: none;
+      font-family: 'Gochi Hand', cursive;
+      box-shadow: none;
+    }
+
+    .App-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      height: auto;
+    }
+
 }

@@ -5,7 +5,8 @@ import logo from './logo.svg';
 import fixSpelling from './supportingfns.js';
 import './App.css';
 //Remember to import the quotebox element -
-import QuoteBox from './quotebox.js'
+import QuoteBox from './quotebox.js';
+import dance from './dance.gif';
 
 //Set up main App class
 class App extends Component {
@@ -54,12 +55,6 @@ class App extends Component {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        // let fixedQuote = data[0].quote.replace("becuase", "because")
-        //                                 .replace("wierd", "weird")
-        //                                   .replace("gigggling", "giggling")
-        //                                     .replace("sandwhiches", "sandwiches")
-        //                                       .replace("specter", "spectre")
-        //                                         .replace("Edinburg", "Edinburgh");
         this.setState({ currentQuotes: data });
         this.setState({ currentQuote: fixSpelling(data[0].quote) });
         this.setState({ currentChar: data[0].character });
@@ -71,16 +66,17 @@ class App extends Component {
 
   //Fetch new API data to update state
   getQuote() {
+      this.setState({ currentQuotes: null });
+      this.setState({ currentQuote: null });
+      this.setState({ currentChar: null });
+      this.setState({ currentCharDirection: null });
+      this.setState({currentPic: null});
+      
+      
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes`)
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      // let fixedQuote = data[0].quote.replace("becuase", "because")
-      //                                 .replace("wierd", "weird")
-      //                                   .replace("gigggling", "giggling")
-      //                                     .replace("sandwhiches", "sandwiches")
-      //                                       .replace("specter", "spectre")
-      //                                         .replace("Edinburg", "Edinburgh");
       this.setState({ currentQuotes: data });
       this.setState({ currentQuote: fixSpelling(data[0].quote) });
       this.setState({ currentChar: data[0].character });
@@ -92,19 +88,42 @@ class App extends Component {
 
   //Put it all together
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h1>The Simpsons Quote-o-matic</h1>
-          <p>{this.state.topQuote}</p>
-        </div>
-        <QuoteBox state={this.state}/>
-        <div className="Buttons">
-          <button onClick={this.getQuote}>Quote</button>
-          <button>Quote-off</button>
-        </div>
-      </div>
-    );
+    if (this.state.currentQuote && this.state.currentChar && this.state.currentPic){
+        return (
+          <div className="App">
+
+            <div className="App-header">
+              <h1>The Simpsons Quote-o-matic</h1>
+              <p>{this.state.topQuote}</p>
+            </div>
+
+            <QuoteBox state={this.state}/>
+
+            <div className="Buttons">
+              <button onClick={this.getQuote}>Quote</button>
+              <button>Quote-off</button>
+            </div>
+          </div>
+        );
+    } else {
+            return (
+              <div className="App">
+
+                <div className="App-header">
+                  <h1>The Simpsons Quote-o-matic</h1>
+                  <p>{this.state.topQuote}</p>
+                </div>
+                <img src={dance} alt="Loading as fast as I can..." className="loading-image"/>
+                <p>Loading...</p>
+                <div className="Buttons">
+                  <button onClick={this.getQuote}>Quote</button>
+                  <button>Quote-off</button>
+                </div>
+              </div>
+            );
+    }
+      
+
   }
 
 }

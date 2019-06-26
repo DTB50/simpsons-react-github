@@ -23,12 +23,26 @@ class App extends Component {
     currentPic: null
     };
 
+
+  //Make initial API call in constructor (componentWillMount is now deprecated)
+  fetch(`https://thesimpsonsquoteapi.glitch.me/quotes`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    this.setState({ currentQuotes: data });
+    this.setState({ currentQuote: fixSpelling(data[0].quote) });
+    this.setState({ currentChar: data[0].character });
+    this.setState({ currentCharDirection: data[0].characterDirection });
+    this.setState({currentPic: data[0].image})
+  })
+  .catch(err => console.log(err));
+      
   //Bind click handler context
   this.getQuote = this.getQuote.bind(this);
   };
 
 
-    componentWillMount() {
+    componentDidMount() {
       //Determine top quote
       const topQuoteArray = [
         "That's not the Monsterometer! That's the Quote Exaggerator!",
@@ -50,18 +64,7 @@ class App extends Component {
       this.setState({topQuote:topQuoteArray[randomNo]});
 
 
-      //Make initial API call in constructor (componentWillMount is now deprecated)
-      fetch(`https://thesimpsonsquoteapi.glitch.me/quotes`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        this.setState({ currentQuotes: data });
-        this.setState({ currentQuote: fixSpelling(data[0].quote) });
-        this.setState({ currentChar: data[0].character });
-        this.setState({ currentCharDirection: data[0].characterDirection });
-        this.setState({currentPic: data[0].image})
-      })
-      .catch(err => console.log(err));
+      
     }
 
   //Fetch new API data to update state

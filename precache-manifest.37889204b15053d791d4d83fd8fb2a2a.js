@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/simpsons-react-github/static/js/runtime~main.b50981d8.js"
   },
   {
-    "revision": "5c46eecbec6cc5d4cefb",
-    "url": "/simpsons-react-github/static/js/main.46b71d3d.chunk.js"
+    "revision": "09e1458732afaa428a45",
+    "url": "/simpsons-react-github/static/js/main.66eb4907.chunk.js"
   },
   {
-    "revision": "b150e1f218be52bc4a69",
-    "url": "/simpsons-react-github/static/js/2.81db6ac8.chunk.js"
+    "revision": "09ce86f68c99d101ddec",
+    "url": "/simpsons-react-github/static/js/2.964b663b.chunk.js"
   },
   {
-    "revision": "5c46eecbec6cc5d4cefb",
+    "revision": "09e1458732afaa428a45",
     "url": "/simpsons-react-github/static/css/main.dbce3c70.chunk.css"
   },
   {
-    "revision": "61fd8e3e1621456bd715f01f1c0e5219",
+    "revision": "8348d1031529ed36b5824dbbd7e92c28",
     "url": "/simpsons-react-github/index.html"
   }
 ];

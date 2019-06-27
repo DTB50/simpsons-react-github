@@ -7,6 +7,7 @@ import './App.css';
 //Remember to import the quotebox element -
 import QuoteBox from './quotebox.js';
 import dance from './dance.gif';
+import doh from './doh.jpg';
 
 //Set up main App class
 class App extends Component {
@@ -20,7 +21,8 @@ class App extends Component {
     currentQuote: null,
     currentChar: null,
     currentCharDirection: null,
-    currentPic: null
+    currentPic: null,
+    errorMessage: null
     };
 
 
@@ -35,7 +37,7 @@ class App extends Component {
     this.setState({ currentCharDirection: data[0].characterDirection });
     this.setState({currentPic: data[0].image})
   })
-  .catch(err => console.log(err));
+  .catch(err => this.setState({ errorMessage: "D'oh! Something went wrong..." }));
       
   //Bind click handler context
   this.getQuote = this.getQuote.bind(this);
@@ -86,29 +88,31 @@ class App extends Component {
       this.setState({ currentCharDirection: data[0].characterDirection });
       this.setState({currentPic: data[0].image})
     })
-    .catch(err => console.log(err));
+    .catch(err => this.setState({ errorMessage: "D'oh! Something went wrong..." }));
   }
 
   //Put it all together
   render() {
-    if (this.state.currentQuote && this.state.currentChar && this.state.currentPic){
-        return (
-          <div className="App">
+    
+      if (this.state.errorMessage !== null){
+           return (
+              <div className="App">
 
-            <div className="App-header">
-              <h1>The Simpsons Quote-o-matic</h1>
-              <p>{this.state.topQuote}</p>
-            </div>
-
-            <QuoteBox state={this.state}/>
-
-            <div className="Buttons">
-              <button onClick={this.getQuote}>Quote</button>
-              <button>Quote-off</button>
-            </div>
-          </div>
-        );
-    } else {
+                <div className="App-header">
+                  <h1>The Simpsons Quote-o-matic</h1>
+                  <p>{this.state.topQuote}</p>
+                </div>
+                <img src={doh} alt="Loading failed image" className="loading-image"/>
+                <p>{this.state.errorMessage}</p>
+                <div className="Buttons">
+                  <button onClick={this.getQuote}>Quote</button>
+                  <button>Quote-off</button>
+                </div>
+              </div>
+            );
+      }
+      else {
+        if (this.state.currentQuote && this.state.currentChar && this.state.currentPic){
             return (
               <div className="App">
 
@@ -116,16 +120,33 @@ class App extends Component {
                   <h1>The Simpsons Quote-o-matic</h1>
                   <p>{this.state.topQuote}</p>
                 </div>
-                <img src={dance} alt="Loading as fast as I can..." className="loading-image"/>
-                <p>Loading...</p>
+
+                <QuoteBox state={this.state}/>
+
                 <div className="Buttons">
                   <button onClick={this.getQuote}>Quote</button>
                   <button>Quote-off</button>
                 </div>
               </div>
             );
+        } else {
+                return (
+                  <div className="App">
+
+                    <div className="App-header">
+                      <h1>The Simpsons Quote-o-matic</h1>
+                      <p>{this.state.topQuote}</p>
+                    </div>
+                    <img src={dance} alt="Loading as fast as I can..." className="loading-image"/>
+                    <p>Loading...</p>
+                    <div className="Buttons">
+                      <button onClick={this.getQuote}>Quote</button>
+                      <button>Quote-off</button>
+                    </div>
+                  </div>
+                );
+            }
     }
-      
 
   }
 

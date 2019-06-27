@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/simpsons-react-github/precache-manifest.984458db5052645c9859e0156f59e2df.js"
+  "/simpsons-react-github/precache-manifest.f50064c7dea29404789162b5f4966a81.js"
 );
 
 workbox.clientsClaim();

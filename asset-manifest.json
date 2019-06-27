@@ -1,15 +1,16 @@
 {
-  "main.css": "/simpsons-react-github/static/css/main.b937b44a.chunk.css",
-  "main.js": "/simpsons-react-github/static/js/main.61c5d80e.chunk.js",
-  "main.js.map": "/simpsons-react-github/static/js/main.61c5d80e.chunk.js.map",
+  "main.css": "/simpsons-react-github/static/css/main.dbce3c70.chunk.css",
+  "main.js": "/simpsons-react-github/static/js/main.99c2a0ef.chunk.js",
+  "main.js.map": "/simpsons-react-github/static/js/main.99c2a0ef.chunk.js.map",
   "runtime~main.js": "/simpsons-react-github/static/js/runtime~main.b50981d8.js",
   "runtime~main.js.map": "/simpsons-react-github/static/js/runtime~main.b50981d8.js.map",
-  "static/js/2.373ccd69.chunk.js": "/simpsons-react-github/static/js/2.373ccd69.chunk.js",
-  "static/js/2.373ccd69.chunk.js.map": "/simpsons-react-github/static/js/2.373ccd69.chunk.js.map",
+  "static/js/2.0771dcc1.chunk.js": "/simpsons-react-github/static/js/2.0771dcc1.chunk.js",
+  "static/js/2.0771dcc1.chunk.js.map": "/simpsons-react-github/static/js/2.0771dcc1.chunk.js.map",
   "index.html": "/simpsons-react-github/index.html",
-  "precache-manifest.984458db5052645c9859e0156f59e2df.js": "/simpsons-react-github/precache-manifest.984458db5052645c9859e0156f59e2df.js",
+  "precache-manifest.f50064c7dea29404789162b5f4966a81.js": "/simpsons-react-github/precache-manifest.f50064c7dea29404789162b5f4966a81.js",
   "service-worker.js": "/simpsons-react-github/service-worker.js",
-  "static/css/main.b937b44a.chunk.css.map": "/simpsons-react-github/static/css/main.b937b44a.chunk.css.map",
+  "static/css/main.dbce3c70.chunk.css.map": "/simpsons-react-github/static/css/main.dbce3c70.chunk.css.map",
   "static/media/dance.gif": "/simpsons-react-github/static/media/dance.ca1465b1.gif",
+  "static/media/doh.jpg": "/simpsons-react-github/static/media/doh.00cab361.jpg",
   "static/media/logo.svg": "/simpsons-react-github/static/media/logo.5d5d9eef.svg"
 }

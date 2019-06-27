@@ -76,7 +76,7 @@ class App extends Component {
       this.setState({ currentChar: null });
       this.setState({ currentCharDirection: null });
       this.setState({currentPic: null});
-      
+      this.setState({errorMessage: null});
       
     fetch(`https://thesimpsonsquoteapi.glitch.me/quotes`)
     .then(res => res.json())

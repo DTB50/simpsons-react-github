@@ -9,6 +9,7 @@ import AppHeader from './AppHeader.js'
 import QuoteBox from './quotebox.js';
 import dance from './dance.gif';
 import doh from './doh.jpg';
+import AppButtons from './AppButtons.js';
 
 //Set up main App class
 class App extends Component {
@@ -98,10 +99,7 @@ class App extends Component {
                <AppHeader topQuote={this.state.topQuote}/>
                 <img src={doh} alt="Loading failed image" className="loading-image"/>
                 <p>{this.state.errorMessage}</p>
-                <div className="Buttons">
-                  <button onClick={this.getQuote}>Quote</button>
-                  <button>Quote-off</button>
-                </div>
+               <AppButtons action={this.getQuote} />
               </div>
             );
       }
@@ -111,10 +109,7 @@ class App extends Component {
               <div className="App">
                 <AppHeader topQuote={this.state.topQuote}/>
                 <QuoteBox state={this.state}/>
-                <div className="Buttons">
-                  <button onClick={this.getQuote}>Quote</button>
-                  <button>Quote-off</button>
-                </div>
+                <AppButtons action={this.getQuote} />
               </div>
             );
         } else {
@@ -123,10 +118,7 @@ class App extends Component {
                     <AppHeader topQuote={this.state.topQuote}/>
                     <img src={dance} alt="Loading as fast as I can..." className="loading-image"/>
                     <p>Loading...</p>
-                    <div className="Buttons">
-                      <button onClick={this.getQuote}>Quote</button>
-                      <button>Quote-off</button>
-                    </div>
+                    <AppButtons action={this.getQuote} />
                   </div>
                 );
             }

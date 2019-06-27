@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/simpsons-react-github/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "00cab361064010fbcbbefd3ded10c008",
-    "url": "/simpsons-react-github/static/media/doh.00cab361.jpg"
+    "revision": "9d763e4d8fd11c520780f61daf6a346b",
+    "url": "/simpsons-react-github/static/media/doh.9d763e4d.jpg"
   },
   {
     "revision": "ca1465b195947d0848e9b115a201ba33",
@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/simpsons-react-github/static/js/runtime~main.b50981d8.js"
   },
   {
-    "revision": "41e4edbc37cd85062515",
-    "url": "/simpsons-react-github/static/js/main.f334b3b9.chunk.js"
+    "revision": "68259deead0f00c0eb37",
+    "url": "/simpsons-react-github/static/js/main.cc5e0cd0.chunk.js"
   },
   {
     "revision": "a4bfaf8c4bccdd0a2cf9",
     "url": "/simpsons-react-github/static/js/2.0771dcc1.chunk.js"
   },
   {
-    "revision": "41e4edbc37cd85062515",
+    "revision": "68259deead0f00c0eb37",
     "url": "/simpsons-react-github/static/css/main.dbce3c70.chunk.css"
   },
   {
-    "revision": "e8fc68ff4b005d2f7abe0119ac35b9b6",
+    "revision": "4096514e587f929d6dca3945b341be6d",
     "url": "/simpsons-react-github/index.html"
   }
 ];
